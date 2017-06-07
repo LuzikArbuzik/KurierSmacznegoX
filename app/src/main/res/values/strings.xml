@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">KurierSmacznego</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="wyswietl_wspolrzedne">51°06′26,7″N 17°03′43,7″E</string>
+    <string name="action_wyslij_wspolrzedne">"Wyślij współrzędne"</string>
+    <string name="action_pokaz_zamowienia">"Pokaż dostępne zamówienia"</string>
+    <string name="title_activity_order_list">OrderListActivity</string>
+
+    <string name="action_zamowienie1">"Pizzeria Etna:   Curie Skłodowskiej 14/5a"</string>
+    <string name="action_zamowienie2">"Pizzeria Etna:   Reja 14/5a"</string>
+
+</resources>
