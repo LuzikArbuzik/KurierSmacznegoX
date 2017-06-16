@@ -10,7 +10,7 @@ public class Restaurant {
     private String url;
     @SerializedName("address")
     @Expose
-    private Address_ address;
+    private Address address;
     @SerializedName("name")
     @Expose
     private String name;
@@ -23,11 +23,11 @@ public class Restaurant {
         this.url = url;
     }
 
-    public Address_ getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(Address_ address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

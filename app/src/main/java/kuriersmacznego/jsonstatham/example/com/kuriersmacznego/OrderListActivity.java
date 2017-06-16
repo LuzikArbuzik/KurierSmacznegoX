@@ -1,6 +1,5 @@
 package kuriersmacznego.jsonstatham.example.com.kuriersmacznego;
 
-import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Address_;
 import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Dish;
 import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Order;
 import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Client;
@@ -56,35 +55,23 @@ public class OrderListActivity extends Activity {
                 "tea.who.you.yeah.bunny",
                 dishes,
                 initializeClient("url", 1, "Jan", "Kowalski", "123456789", initializeAddress("url", 1,"Wrocław", "Sienkiewicza", "32", "23")),
-                initializeRestaurant("url", initializeAddress_("url", 2,"Wrocław", "Bycza", "13", "2"), "PizzaStation")));
+                initializeRestaurant("url", initializeAddress("url", 2,"Wrocław", "Bycza", "13", "2"), "PizzaStation")));
 
         orders.add(initializeOrder(
                 "tea.who.you.yeah.bunny",
                 dishes,
                 initializeClient("url", 2, "Jan", "Kowalski", "123456789", initializeAddress("url", 1,"Wrocław", "Sienkiewicza", "32", "23")),
-                initializeRestaurant("url", initializeAddress_("url", 2,"Wrocław", "Bycza", "13", "2"), "PizzaStation")));
+                initializeRestaurant("url", initializeAddress("url", 2,"Wrocław", "Bycza", "13", "2"), "PizzaStation")));
 
         orders.add(initializeOrder(
                 "tea.who.you.yeah.bunny",
                 dishes,
                 initializeClient("url", 2, "Jan", "Kowalski", "123456789", initializeAddress("url", 1,"Wrocław", "Sienkiewicza", "32", "23")),
-                initializeRestaurant("url", initializeAddress_("url", 2,"Wrocław", "Bycza", "13", "2"), "PizzaStation")));
+                initializeRestaurant("url", initializeAddress("url", 2,"Wrocław", "Bycza", "13", "2"), "PizzaStation")));
     }
 
     private Address initializeAddress(String url, Integer id, String city, String street, String addressNum, String doorNum) {
         Address address = new Address();
-        address.setUrl(url);
-        address.setId(id);
-        address.setCity(city);
-        address.setStreet(street);
-        address.setAddressNum(addressNum);
-        address.setDoorNum(doorNum);
-
-        return address;
-    }
-
-    private Address_ initializeAddress_(String url, Integer id, String city, String street, String addressNum, String doorNum) {
-        Address_ address = new Address_();
         address.setUrl(url);
         address.setId(id);
         address.setCity(city);
@@ -126,7 +113,7 @@ public class OrderListActivity extends Activity {
         return dish;
     }
 
-    private Restaurant initializeRestaurant(String url, Address_ address, String name) {
+    private Restaurant initializeRestaurant(String url, Address address, String name) {
         Restaurant restaurant = new Restaurant();
         restaurant.setUrl(url);
         restaurant.setAddress(address);
