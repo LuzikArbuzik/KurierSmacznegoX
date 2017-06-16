@@ -64,6 +64,5 @@ public class MainActivity extends AppCompatActivity {
     private void wyswietlZamowienia() {
         Intent intentOrderListActivity = new Intent(getApplicationContext(), OrderListActivity.class);
         startActivity(intentOrderListActivity);
-
     }
 }
