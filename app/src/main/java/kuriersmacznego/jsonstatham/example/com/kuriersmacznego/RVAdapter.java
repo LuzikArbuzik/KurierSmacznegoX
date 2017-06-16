@@ -12,6 +12,8 @@ import java.util.List;
 
 import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Order;
 
+//https://code.tutsplus.com/tutorials/getting-started-with-recyclerview-and-cardview-on-android--cms-23465
+
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.OrderViewHolder> {
 
     public static class OrderViewHolder extends RecyclerView.ViewHolder {
