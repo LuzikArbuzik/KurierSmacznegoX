@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnWyslijWspolrzedne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                zalogojDoSerwera();
+                zalogujDoSerwera();
             }
         });
         btnPokazZamowienia.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
     }
 
-    private void zalogojDoSerwera() {
+    private void zalogujDoSerwera() {
         zalogowano = true;
         btnPokazZamowienia.setVisibility(View.VISIBLE);
 
