@@ -1,0 +1,102 @@
+{"count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "url": "http://127.0.0.1:8000/orders/1/",
+      "dishes": [
+        {
+          "url": "http://127.0.0.1:8000/dishes/1/",
+          "name": "pizza",
+          "quantity": 3
+        },
+        {
+          "url": "http://127.0.0.1:8000/dishes/2/",
+          "name": "pepsi",
+          "quantity": 2
+        }
+      ],
+      "client": {
+        "url": "http://127.0.0.1:8000/clients/1/",
+        "id": 1,
+        "first_name": "Jan",
+        "last_name": "Kowalski",
+        "phone_number": "+48 123123123",
+        "address": {
+          "url": "http://127.0.0.1:8000/address/2/",
+          "id": 2,
+          "city": "Wroclaw",
+          "street": "Grunwaldzka",
+          "address_num": "12",
+          "door_num": "1",
+          "lat": 51.1096334,
+          "lon": 17.0224781
+        }
+      },
+      "restaurant": {
+        "url": "http://127.0.0.1:8000/restaurants/1/",
+        "address": {
+          "url": "http://127.0.0.1:8000/address/1/",
+          "id": 1,
+          "city": "Wroclaw",
+          "street": "Grunwaldzka",
+          "address_num": "55",
+          "door_num": "2",
+          "lat": 51.1144954,
+          "lon": 17.0456741
+        },
+        "name": "Telepizza"
+      },
+      "is_taken": false,
+      "is_delivered": false
+    },
+    {
+      "url": "http://127.0.0.1:8000/orders/2/",
+      "dishes": [
+        {
+          "url": "http://127.0.0.1:8000/dishes/3/",
+          "name": "lasagne",
+          "quantity": 2
+        },
+        {
+          "url": "http://127.0.0.1:8000/dishes/4/",
+          "name": "cola",
+          "quantity": 1
+        }
+      ],
+      "client": {
+        "url": "http://127.0.0.1:8000/clients/2/",
+        "id": 2,
+        "first_name": "Jan",
+        "last_name": "Kowalski",
+        "phone_number": "+48 123123123",
+        "address": {
+          "url": "http://127.0.0.1:8000/address/4/",
+          "id": 4,
+          "city": "Wroclaw",
+          "street": "Grunwaldzka",
+          "address_num": "12",
+          "door_num": "1",
+          "lat": 51.1096334,
+          "lon": 17.0224781
+        }
+      },
+      "restaurant": {
+        "url": "http://127.0.0.1:8000/restaurants/2/",
+        "address": {
+          "url": "http://127.0.0.1:8000/address/3/",
+          "id": 3,
+          "city": "Wroclaw",
+          "street": "Grunwaldzka",
+          "address_num": "55",
+          "door_num": "2",
+          "lat": 51.1144954,
+          "lon": 17.0456741
+        },
+        "name": "Telepizza"
+      },
+      "is_taken": false,
+      "is_delivered": false
+    }
+  ]
+}
