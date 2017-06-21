@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             "1@2.com:12345",
             "1:1"
     };
-    //dupa
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */

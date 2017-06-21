@@ -1,8 +1,12 @@
 package kuriersmacznego.jsonstatham.example.com.kuriersmacznego;
 
+import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.courier.CourierLocation;
 import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Orders;
+import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Result;
 import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.remote.*;
-
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -11,13 +15,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,12 +30,10 @@ public class MainActivity extends AppCompatActivity {
     Button btnWyslijWspolrzedne;
     Button btnPokazZamowienia;
     boolean zalogowano = false;
-
     private Orders orders;
-
-    private APIService mAPIService;
-
-    private static final String CLASS_TAG = "MainActivity";
+    private CourierLocation courierLocation;
+    APIService apiService;
+    RetrofitClient retrofitClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,35 +62,56 @@ public class MainActivity extends AppCompatActivity {
     private void zalogujDoSerwera() {
         zalogowano = true;
         btnPokazZamowienia.setVisibility(View.VISIBLE);
-
-        // Trigger do wysłania zapytania
-        //mAPIService = ApiUtils.getAPIService();
     }
 
     private void wyswietlZamowienia() {
-        Intent intentOrderListActivity = new Intent(getApplicationContext(), OrderListActivity.class);
-        initializeOrders();
+        initializeLocation();
+    }
 
-        // https://stackoverflow.com/questions/21761438/how-to-pass-gson-serialised-object-to-intent-in-android
+    private void initializeLocation() {
+        String locationString = getJSONString(getApplicationContext());
+        Gson gson = new GsonBuilder().create();
+        courierLocation = gson.fromJson(locationString, CourierLocation.class);
+        makeRetrofit();
+
+
+    }
+
+    private void makeRetrofit() {
+        apiService = retrofitClient.getClient(RetrofitClient.MULE_LOCATION_URL);
+        final Call<Orders> orderCall = apiService.sendLocation(courierLocation);
+        orderCall.enqueue(new Callback<Orders>() {
+            @Override
+            public void onResponse(Call<Orders> call, Response<Orders> response) {
+                orders = response.body();
+                List<Result> listOfResults = orders.getResults();
+                if(listOfResults==null){
+                    Toast.makeText(getApplicationContext(),"Lista zleceń jest pusta",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Połączono",Toast.LENGTH_LONG).show();
+                    startIntentOrderListActivity();
+                }
+            }
+            @Override
+            public void onFailure(Call<Orders> call, Throwable t) {
+                Toast.makeText(getApplicationContext(),"Nie udało się połączyć z serwerem",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void startIntentOrderListActivity() {
+        Intent intentOrderListActivity = new Intent(getApplicationContext(), OrderListActivity.class);
         Gson gson = new Gson();
         intentOrderListActivity.putExtra("Orders", gson.toJson(orders));
         startActivity(intentOrderListActivity);
-    }
-
-    private void initializeOrders() {
-        // ToDO: Tutaj wjedzie zapytanie JSONowe.
-
-        // poki co pobieramy z pliku json
-        String ordersString = getJSONString(getApplicationContext());
-        Gson gson = new GsonBuilder().create();
-        orders = gson.fromJson(ordersString, Orders.class);
     }
 
     private String getJSONString(Context context) {
         String str = "";
         try {
             AssetManager assetManager = context.getAssets();
-            InputStream in = assetManager.open("example_orders.json");
+            InputStream in = assetManager.open("location.json");
             InputStreamReader isr = new InputStreamReader(in);
             char[] inputBuffer = new char[100];
 

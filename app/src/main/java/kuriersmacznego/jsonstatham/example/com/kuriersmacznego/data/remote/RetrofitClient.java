@@ -7,16 +7,22 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
 
-    private static Retrofit retrofit = null;
+    public static final String MULE_TEST_URL = "http://10.0.2.2:8081/mule/";
+    public static final String MULE_LOCATION_URL = "http://10.0.2.2:8081/mule/";
 
-    public static Retrofit getClient(String baseUrl) {
-        if (retrofit==null) {
-            retrofit = new Retrofit.Builder()
+    private static APIService apiService = null;
+
+
+    public static APIService getClient(String baseUrl) {
+        if (apiService==null) {
+            Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(baseUrl)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
+            apiService = retrofit.create(APIService.class);
+
         }
-        return retrofit;
+        return apiService;
     }
 }
 

@@ -73,4 +73,8 @@ public class Result {
         this.isDelivered = isDelivered;
     }
 
+    @Override
+    public String toString() {
+        return restaurant.toString();
+    }
 }

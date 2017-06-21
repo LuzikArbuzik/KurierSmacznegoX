@@ -72,4 +72,8 @@ public class Address {
         this.doorNum = doorNum;
     }
 
+    @Override
+    public String toString() {
+        return "Adres: " + street + addressNum + '/' + doorNum;
+    }
 }

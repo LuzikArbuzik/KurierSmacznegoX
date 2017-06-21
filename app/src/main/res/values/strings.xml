@@ -13,7 +13,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="wyswietl_wspolrzedne">51°06′26,7″N 17°03′43,7″E</string>
+    <string name="wyswietl_wspolrzedne">51.107175, 17.031997</string>
     <string name="action_wyslij_wspolrzedne">"Wyślij współrzędne"</string>
     <string name="action_pokaz_zamowienia">"Pokaż dostępne zamówienia"</string>
     <string name="title_activity_order_list">OrderListActivity</string>

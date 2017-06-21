@@ -29,7 +29,6 @@ public class OrderListActivity extends Activity {
 
         loadOrders();
         initializeAdapter();
-
     }
 
     private void loadOrders() {
