@@ -6,11 +6,13 @@ import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.courier.Cour
 
 import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Order;
 import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Orders;
+import kuriersmacznego.jsonstatham.example.com.kuriersmacznego.data.orders.Result;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 
 public interface APIService {
 
@@ -20,6 +22,7 @@ public interface APIService {
 
     @GET("testLocation/")
     Call<Orders> getOrders();
+
 
 }
 

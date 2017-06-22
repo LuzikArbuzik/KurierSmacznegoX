@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".OrderListActivity" />
+        <activity android:name=".OrderActivity"></activity>
     </application>
 
 </manifest>

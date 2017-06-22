@@ -21,4 +21,11 @@
     <string name="action_zamowienie1">"Pizzeria Etna:   Curie Skłodowskiej 14/5a"</string>
     <string name="action_zamowienie2">"Pizzeria Etna:   Reja 14/5a"</string>
 
+    <string name="clientTitle">"Dane Klienta"</string>
+    <string name="restaurantTitle">"Dane Restauracji"</string>
+    <string name="goToMapRestaurant">"Prowadź do restauracji"</string>
+    <string name="goToMapClient">"Prowadź do Klienta"</string>
+    <string name="received">"Odebrano"</string>
+    <string name="delivered">"Dostarczono"</string>
+
 </resources>

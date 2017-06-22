@@ -41,6 +41,6 @@ public class Restaurant {
 
     @Override
     public String toString() {
-        return name+address.toString();
+        return name+"\n"+address.toString();
     }
 }

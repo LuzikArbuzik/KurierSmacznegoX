@@ -23,6 +23,28 @@ public class Address {
     @SerializedName("door_num")
     @Expose
     private String doorNum;
+    @SerializedName("lat")
+    @Expose
+    private Double lat;
+    @SerializedName("lon")
+    @Expose
+    private Double lon;
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLon() {
+        return lon;
+    }
+
+    public void setLon(Double lon) {
+        this.lon = lon;
+    }
 
     public String getUrl() {
         return url;
@@ -74,6 +96,6 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Adres: " + street + addressNum + '/' + doorNum;
+        return street +" "+ addressNum + '/' + doorNum;
     }
 }
